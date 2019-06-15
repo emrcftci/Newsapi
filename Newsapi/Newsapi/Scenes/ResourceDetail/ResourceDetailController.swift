@@ -13,6 +13,10 @@ protocol ResourceDetailDisplayLogic: class {
 }
 
 final class ResourceDetailController: UIViewController {
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var tableView: UITableView!
 
     var interactor: ResourceDetailBusinessLogic?
     var router: (ResourceDetailRoutingLogic & ResourceDetailDataPassing)?
@@ -44,6 +48,29 @@ final class ResourceDetailController: UIViewController {
         router.dataStore = interactor
     }
 }
+
+// MARK: - UITableViewDelegate
+
+extension ResourceDetailController: UITableViewDelegate {
+    
+}
+
+// MARK: - UITableViewDataSource
+
+extension ResourceDetailController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    
+}
+
+
+// MARK: - ResourceDetailDisplayLogic
 
 extension ResourceDetailController: ResourceDetailDisplayLogic {
 
