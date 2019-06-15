@@ -6,10 +6,10 @@
 //  Copyright © 2019 Emre Çiftçi. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol ResourcesRoutingLogic: class {
-
+    func routeToDetail()
 }
 
 protocol ResourcesDataPassing: class {
@@ -21,4 +21,9 @@ final class ResourcesRouter: ResourcesRoutingLogic, ResourcesDataPassing {
     weak var viewController: ResourcesController?
     var dataStore: ResourcesDataStore?
 
+    func routeToDetail() {
+        let storyBoard = UIStoryboard(name: "ResourceDetail", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: Constants.Identifiers.ResourceDetailControllerIdentifier)
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

@@ -66,9 +66,11 @@ extension ResourceDetailController: UITableViewDataSource {
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        router?.routeToSafari()
+    }
     
 }
-
 
 // MARK: - ResourceDetailDisplayLogic
 

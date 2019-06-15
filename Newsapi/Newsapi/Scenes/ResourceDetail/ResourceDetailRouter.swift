@@ -6,10 +6,10 @@
 //  Copyright © 2019 Emre Çiftçi. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol ResourceDetailRoutingLogic: class {
-
+    func routeToSafari()
 }
 
 protocol ResourceDetailDataPassing: class {
@@ -21,4 +21,16 @@ final class ResourceDetailRouter: ResourceDetailRoutingLogic, ResourceDetailData
     weak var viewController: ResourceDetailController?
     var dataStore: ResourceDetailDataStore?
 
+    func routeToSafari() {
+
+    }
+    
+}
+
+// MARK: - Private Helpers
+
+private extension ResourceDetailRouter {
+    func openSafari(with url: URL) {
+        UIApplication.shared.open(url)
+    }
 }
