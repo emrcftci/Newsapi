@@ -13,7 +13,7 @@
         <!--Resources Controller-->
         <scene sceneID="ZeK-2v-NTN">
             <objects>
-                <viewController id="ebf-iD-upf" customClass="ResourcesController" customModule="Newsapi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResourcesController" id="ebf-iD-upf" customClass="ResourcesController" customModule="Newsapi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yPM-s0-pbG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

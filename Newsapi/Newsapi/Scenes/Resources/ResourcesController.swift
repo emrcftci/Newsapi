@@ -98,4 +98,8 @@ extension ResourcesController: UITableViewDataSource {
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        router?.routeToDetail()
+    }
+    
 }
