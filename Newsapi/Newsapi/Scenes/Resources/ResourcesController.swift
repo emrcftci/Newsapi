@@ -11,6 +11,7 @@ import UIKit
 protocol ResourcesDisplayLogic: class {
     func displayReloadTableView()
     func displayFailureAlert()
+    func displaySelectedResourceDetail()
 }
 
 final class ResourcesController: UIViewController {
@@ -78,6 +79,9 @@ private extension ResourcesController {
     }
     
     func setTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
         
@@ -92,7 +96,6 @@ private extension ResourcesController {
     }
     
     func setNavigationBar() {
-        navigationController?.navigationBar.backgroundColor = .blue
         title = "Kaynaklar"
     }
     
@@ -115,6 +118,16 @@ extension ResourcesController: ResourcesDisplayLogic {
     func displayFailureAlert() {
         router?.routeToFailureAlert()
     }
+    
+    func displaySelectedResourceDetail() {
+        router?.routeToDetail()
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension ResourcesController: UITableViewDelegate {
+    
 }
 
 // MARK: - UITableViewDataSource
@@ -137,7 +150,7 @@ extension ResourcesController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        router?.routeToDetail()
+        let requestModel = Resources.SetSelectedId.Request(indexPath: indexPath)
+        interactor?.setSelectedResourceData(request: requestModel)
     }
-    
 }

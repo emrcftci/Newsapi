@@ -11,6 +11,7 @@ import Foundation
 protocol ResourcesPresentationLogic: class {
     func presentReloadTableView()
     func presentFailureAlert()
+    func presentSelecteResourceDetail()
 }
 
 final class ResourcesPresenter: ResourcesPresentationLogic {
@@ -22,6 +23,12 @@ final class ResourcesPresenter: ResourcesPresentationLogic {
     }
     
     func presentFailureAlert() {
-        viewController?.displayFailureAlert()
+        DispatchQueue.main.async {
+            self.viewController?.displayFailureAlert()
+        }
+    }
+    
+    func presentSelecteResourceDetail() {
+        viewController?.displaySelectedResourceDetail()
     }
 }

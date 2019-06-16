@@ -27,6 +27,7 @@ final class ResourcesRouter: ResourcesRoutingLogic, ResourcesDataPassing {
         if let vc = storyBoard.instantiateViewController(withIdentifier: Constants.Identifiers.ResourceDetailControllerIdentifier) as? ResourceDetailController {
             
             vc.router?.dataStore?.resourceId = dataStore?.selectedResourceId
+            vc.router?.dataStore?.resourceName = dataStore?.selectedRosurceName
             viewController?.navigationController?.pushViewController(vc, animated: true)
         }
     }
