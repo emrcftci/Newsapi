@@ -21,6 +21,6 @@ class BaseController: UIViewController {
 
 private extension BaseController {
     func setNavigationBar() {
-        navigationController?.navigationBar.backgroundColor = .blue
+        navigationController?.navigationBar.barTintColor = .blue
     }
 }

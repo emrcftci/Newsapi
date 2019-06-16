@@ -12,7 +12,7 @@ protocol ResourceDetailDisplayLogic: class {
 
 }
 
-final class ResourceDetailController: UIViewController {
+final class ResourceDetailController: BaseController {
     
     // MARK: - Outlets
     
@@ -32,6 +32,13 @@ final class ResourceDetailController: UIViewController {
         super.init(coder: aDecoder)
         setup()
     }
+    
+    // MARK: - View's Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fetchResourceDetail()
+    }
 
     // MARK: Setup
 
@@ -46,6 +53,15 @@ final class ResourceDetailController: UIViewController {
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
+    }
+}
+
+// MARK: Private Helpers
+
+private extension ResourceDetailController {
+    func fetchResourceDetail() {
+        let requestModel = ResourceDetail.GetResourceDetail.RequestModel.self
+        interactor?.fetchResourceDetail(request: requestModel)
     }
 }
 

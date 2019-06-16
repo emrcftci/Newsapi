@@ -38,6 +38,9 @@ final class ResourcesController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        
+        let requestModel = Resources.GetResources.RequestModel.self
+        interactor?.fetchResources(request: requestModel)
     }
 
     // MARK: Setup

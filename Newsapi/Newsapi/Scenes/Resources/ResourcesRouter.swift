@@ -23,7 +23,10 @@ final class ResourcesRouter: ResourcesRoutingLogic, ResourcesDataPassing {
 
     func routeToDetail() {
         let storyBoard = UIStoryboard(name: "ResourceDetail", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: Constants.Identifiers.ResourceDetailControllerIdentifier)
-        viewController?.navigationController?.pushViewController(vc, animated: true)
+        if let vc = storyBoard.instantiateViewController(withIdentifier: Constants.Identifiers.ResourceDetailControllerIdentifier) as? ResourceDetailController {
+            
+            vc.router?.dataStore?.resourceId = dataStore?.selectedResourceId
+            viewController?.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
