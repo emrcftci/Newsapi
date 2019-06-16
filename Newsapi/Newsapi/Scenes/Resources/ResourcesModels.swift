@@ -43,4 +43,10 @@ public enum Resources {
             let numberOfRowsInSection: Int
         }
     }
+    
+    enum SetSelectedId {
+        struct Request {
+            let indexPath: IndexPath
+        }
+    }
 }

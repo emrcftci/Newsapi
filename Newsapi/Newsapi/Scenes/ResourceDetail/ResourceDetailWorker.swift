@@ -15,8 +15,8 @@ final public class ResourceDetailWorker {
 // MARK: - Public Helpers
 
 public extension ResourceDetailWorker {
-    func getSourceDetail(with resourceId: String, completion: @escaping ResourceDetailHandler) {
-        sessionProvider.request(type: ResourceDetail.GetResourceDetail.RequestModel.self, service: NewsServices.getTopHeadlines(source: resourceId)) { response in
+    func getSourceDetail(with requestModel: ResourceDetail.GetResourceDetail.RequestModel.Type, resourceId: String, completion: @escaping ResourceDetailHandler) {
+        sessionProvider.request(type: requestModel, service: NewsServices.getTopHeadlines(source: resourceId)) { response in
             
             switch response {
             case let .success(sourceDetail):

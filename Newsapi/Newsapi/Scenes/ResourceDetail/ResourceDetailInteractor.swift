@@ -10,11 +10,16 @@ import Foundation
 
 protocol ResourceDetailBusinessLogic: class {
     func fetchResourceDetail(request: ResourceDetail.GetResourceDetail.RequestModel.Type)
+    func setPageTitle()
+    func setSelectedNewsUrl(request: ResourceDetail.SetNewsUrl.Request)
 }
 
 protocol ResourceDetailDataStore: class {
     var sourceDetail: [ResourceDetail.GetResourceDetail.Article]? { get set }
     var resourceId: String? { get set }
+    var resourceName: String? { get set }
+    var errorText: String? { get set }
+    var newsUrl: String? { get set }
 }
 
 class ResourceDetailInteractor: ResourceDetailBusinessLogic, ResourceDetailDataStore {
@@ -24,23 +29,47 @@ class ResourceDetailInteractor: ResourceDetailBusinessLogic, ResourceDetailDataS
     
     var sourceDetail: [ResourceDetail.GetResourceDetail.Article]?
     var resourceId: String?
+    var resourceName: String?
+    var errorText: String?
+    var newsUrl: String?
     
     func fetchResourceDetail(request: ResourceDetail.GetResourceDetail.RequestModel.Type) {
         
-        worker.getSourceDetail(with: resourceId ?? "") { [weak self] response in
+        worker.getSourceDetail(with: request.self, resourceId: resourceId ?? "") { [weak self] response in
             guard let self = self else { return }
-            
             self.sourceDetail = response?.articles
-            
-            guard let sourceNews = self.sourceDetail else {
-                // TODO: Call presenter's failure message
-                return
-            }
-            
-            // TODO: - Call presenter's reload action for tableView
-            
-            
+            self.checkDataForAction()
         }
     }
+    
+    func setPageTitle() {
+        let responseModel = ResourceDetail.SetPageTitle.Response(resourceName: resourceName ?? "")
+        presenter?.presentResourceName(response: responseModel)
+    }
+    
+    func setSelectedNewsUrl(request: ResourceDetail.SetNewsUrl.Request) {
+        let index = request.indexPath.row
+        newsUrl = sourceDetail?[index].url
+        
+        presenter?.presentNewsOnSafari()
+    }
 
+}
+
+// MARK: - Private Helpers
+
+private extension ResourceDetailInteractor {
+    func checkDataForAction() {
+        
+        if sourceDetail == nil {
+            errorText = Constants.ErrorMessages.ConnectionError
+            presenter?.presentFailureAlert()
+            return
+        }
+        
+        presenter?.presentReloadTableView()
+        
+        // TODO: - Call presenter's reload action for tableView
+        
+    }
 }

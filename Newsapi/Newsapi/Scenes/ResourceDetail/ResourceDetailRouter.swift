@@ -10,6 +10,7 @@ import UIKit
 
 protocol ResourceDetailRoutingLogic: class {
     func routeToSafari()
+    func routeToFailureAlert()
 }
 
 protocol ResourceDetailDataPassing: class {
@@ -22,7 +23,21 @@ final class ResourceDetailRouter: ResourceDetailRoutingLogic, ResourceDetailData
     var dataStore: ResourceDetailDataStore?
 
     func routeToSafari() {
-
+        let urlString = dataStore?.newsUrl ?? ""
+        if let url = URL(string: urlString) {
+            openSafari(with: url)
+        }
+    }
+    
+    func routeToFailureAlert() {
+        if let alert = UIStoryboard(name: "Alert", bundle: nil).instantiateViewController(withIdentifier:  "FailureAlertController") as? FailureAlertController {
+            
+            alert.transitioningDelegate = alert
+            alert.modalPresentationStyle = .custom
+            
+            alert.titleText = dataStore?.errorText ?? "-"
+            viewController?.present(alert, animated: true, completion: nil)
+        }
     }
     
 }

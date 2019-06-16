@@ -10,11 +10,13 @@ import Foundation
 
 protocol ResourcesBusinessLogic: class {
     func fetchResources(request: Resources.GetResources.RequestModel.Type)
+    func setSelectedResourceData(request: Resources.SetSelectedId.Request)
 }
 
 protocol ResourcesDataStore: class {
     var sources: [Resources.GetResources.Source]? { get set }
     var selectedResourceId: String? { get set }
+    var selectedRosurceName: String? { get set }
     var errorText: String? { get set }
 }
 
@@ -25,6 +27,7 @@ class ResourcesInteractor: ResourcesBusinessLogic, ResourcesDataStore {
     
     var sources: [Resources.GetResources.Source]?
     var selectedResourceId: String?
+    var selectedRosurceName: String?
     var errorText: String?
 
     func fetchResources(request: Resources.GetResources.RequestModel.Type) {
@@ -36,6 +39,13 @@ class ResourcesInteractor: ResourcesBusinessLogic, ResourcesDataStore {
             self.checkSourcesForAction()
         }
     }
+    
+    func setSelectedResourceData(request: Resources.SetSelectedId.Request) {
+        let selectedResource = sources?[request.indexPath.row]
+        selectedResourceId = selectedResource?.id
+        selectedRosurceName = selectedResource?.name
+        presenter?.presentSelecteResourceDetail()
+    }
 }
 
 // MARK: - Private Helpers
@@ -44,7 +54,7 @@ private extension ResourcesInteractor {
     func checkSourcesForAction() {
         
         if self.sources == nil {
-            self.errorText = "Please check your connection."
+            self.errorText = Constants.ErrorMessages.ConnectionError
             self.presenter?.presentFailureAlert()
             return
         }

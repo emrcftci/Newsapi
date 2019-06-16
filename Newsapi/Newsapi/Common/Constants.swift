@@ -18,4 +18,10 @@ enum Constants {
         static let ResourceDetailCellIdentifier = "ResourceDetailCell"
     }
     
+    // MARK: - Error messages
+    
+    enum ErrorMessages {
+        static let ConnectionError = "Please check your connection."
+    }
+    
 }

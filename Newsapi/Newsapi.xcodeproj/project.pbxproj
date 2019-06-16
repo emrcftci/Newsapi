@@ -16,6 +16,8 @@
 		29846C0F22B6875A00AF6763 /* SwipeInteractionAnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29846C0E22B6875A00AF6763 /* SwipeInteractionAnimationHelper.swift */; };
 		29846C1122B6878000AF6763 /* DismissPopupAnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29846C1022B6878000AF6763 /* DismissPopupAnimationHelper.swift */; };
 		29846C1422B6888100AF6763 /* Alert.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29846C1322B6888100AF6763 /* Alert.xcassets */; };
+		29846C1A22B69AC400AF6763 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29846C1922B69AC400AF6763 /* UIImage+Resize.swift */; };
+		29846C1F22B6B08200AF6763 /* ResourceDetail.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29846C1E22B6B08200AF6763 /* ResourceDetail.xcassets */; };
 		29AB29C522B524BA00A6B6E6 /* ResourceDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB29BF22B524BA00A6B6E6 /* ResourceDetailPresenter.swift */; };
 		29AB29C622B524BA00A6B6E6 /* ResourceDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB29C022B524BA00A6B6E6 /* ResourceDetailModels.swift */; };
 		29AB29C722B524BA00A6B6E6 /* ResourceDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB29C122B524BA00A6B6E6 /* ResourceDetailInteractor.swift */; };
@@ -90,6 +92,8 @@
 		29846C0E22B6875A00AF6763 /* SwipeInteractionAnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeInteractionAnimationHelper.swift; sourceTree = "<group>"; };
 		29846C1022B6878000AF6763 /* DismissPopupAnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissPopupAnimationHelper.swift; sourceTree = "<group>"; };
 		29846C1322B6888100AF6763 /* Alert.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Alert.xcassets; sourceTree = "<group>"; };
+		29846C1922B69AC400AF6763 /* UIImage+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
+		29846C1E22B6B08200AF6763 /* ResourceDetail.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ResourceDetail.xcassets; sourceTree = "<group>"; };
 		29AB29BF22B524BA00A6B6E6 /* ResourceDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceDetailPresenter.swift; sourceTree = "<group>"; };
 		29AB29C022B524BA00A6B6E6 /* ResourceDetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceDetailModels.swift; sourceTree = "<group>"; };
 		29AB29C122B524BA00A6B6E6 /* ResourceDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceDetailInteractor.swift; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 			children = (
 				29C78C4A22B5184D00CBB84A /* Launch.xcassets */,
 				29846C1322B6888100AF6763 /* Alert.xcassets */,
+				29846C1E22B6B08200AF6763 /* ResourceDetail.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -196,9 +201,18 @@
 		29846C1522B688E500AF6763 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				29846C1622B6981500AF6763 /* Extensions */,
 				29846C0D22B6870F00AF6763 /* PopupAnimation */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		29846C1622B6981500AF6763 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				29846C1922B69AC400AF6763 /* UIImage+Resize.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		29AB29BE22B524A600A6B6E6 /* ResourceDetail */ = {
@@ -510,6 +524,7 @@
 				29C78C9522B51FF000CBB84A /* Resources.storyboard in Resources */,
 				29C78C4B22B5184D00CBB84A /* Launch.xcassets in Resources */,
 				29846BF822B6821D00AF6763 /* Alert.storyboard in Resources */,
+				29846C1F22B6B08200AF6763 /* ResourceDetail.xcassets in Resources */,
 				29AB29CC22B525FD00A6B6E6 /* ResourceDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,6 +640,7 @@
 				29846C1122B6878000AF6763 /* DismissPopupAnimationHelper.swift in Sources */,
 				29AB29DF22B53A2F00A6B6E6 /* ParametersEncoding.swift in Sources */,
 				29AB29C522B524BA00A6B6E6 /* ResourceDetailPresenter.swift in Sources */,
+				29846C1A22B69AC400AF6763 /* UIImage+Resize.swift in Sources */,
 				29C78C8722B51D8600CBB84A /* ResourcesModels.swift in Sources */,
 				29AB29F322B53B2300A6B6E6 /* NewsServices.swift in Sources */,
 				29AB29D622B5314D00A6B6E6 /* Constants.swift in Sources */,

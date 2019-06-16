@@ -18,7 +18,7 @@ public enum ResourceDetail {
             let articles: [Article]
         }
         
-        struct Article: Codable {
+        public struct Article: Codable {
             let author: String
             let title: String
             let urlToImage: String
@@ -30,5 +30,21 @@ public enum ResourceDetail {
             
         }
         
+    }
+    
+    enum SetPageTitle {
+        struct Response {
+            let resourceName: String
+        }
+        
+        struct ViewModel {
+            let resourceName: String
+        }
+    }
+    
+    enum SetNewsUrl {
+        struct Request {
+            let indexPath: IndexPath
+        }
     }
 }
