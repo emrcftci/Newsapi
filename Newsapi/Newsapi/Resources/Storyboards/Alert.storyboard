@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yjy-lW-VmC">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Failure Alert Controller-->
+        <scene sceneID="m36-dj-evn">
+            <objects>
+                <viewController storyboardIdentifier="FailureAlertController" id="Yjy-lW-VmC" customClass="FailureAlertController" customModule="Newsapi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d0C-md-Q2p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aF8-PS-27C">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <connections>
+                                    <action selector="didTapCloseButton:" destination="Yjy-lW-VmC" eventType="touchUpInside" id="yd5-NY-Fos"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nHW-dw-AsI">
+                                <rect key="frame" x="24" y="393" width="366" height="110.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdL-HS-ylg">
+                                        <rect key="frame" x="314" y="8" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="8GF-Jc-8Vy"/>
+                                            <constraint firstAttribute="height" constant="44" id="gV7-dr-JZ6"/>
+                                        </constraints>
+                                        <state key="normal" image="close"/>
+                                        <connections>
+                                            <action selector="didTapCloseButton:" destination="Yjy-lW-VmC" eventType="touchUpInside" id="kIW-KE-ooA"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFd-gO-XYp">
+                                        <rect key="frame" x="16" y="66" width="334" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="YFd-gO-XYp" firstAttribute="leading" secondItem="nHW-dw-AsI" secondAttribute="leading" constant="16" id="Hvw-XT-uFp"/>
+                                    <constraint firstAttribute="trailing" secondItem="YdL-HS-ylg" secondAttribute="trailing" constant="8" id="T75-0y-UA2"/>
+                                    <constraint firstAttribute="bottom" secondItem="YFd-gO-XYp" secondAttribute="bottom" constant="24" id="Ttg-fI-uqp"/>
+                                    <constraint firstItem="YFd-gO-XYp" firstAttribute="top" secondItem="YdL-HS-ylg" secondAttribute="bottom" constant="14" id="YFQ-pl-Tzg"/>
+                                    <constraint firstItem="YdL-HS-ylg" firstAttribute="top" secondItem="nHW-dw-AsI" secondAttribute="top" constant="8" id="jQv-DR-kct"/>
+                                    <constraint firstAttribute="trailing" secondItem="YFd-gO-XYp" secondAttribute="trailing" constant="16" id="rh1-OI-1s1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nHW-dw-AsI" firstAttribute="leading" secondItem="QTq-5K-jL6" secondAttribute="leading" constant="24" id="BZp-dE-Fja"/>
+                            <constraint firstItem="QTq-5K-jL6" firstAttribute="trailing" secondItem="nHW-dw-AsI" secondAttribute="trailing" constant="24" id="Fys-eA-qKQ"/>
+                            <constraint firstItem="aF8-PS-27C" firstAttribute="leading" secondItem="QTq-5K-jL6" secondAttribute="leading" id="PCM-K2-JNk"/>
+                            <constraint firstItem="QTq-5K-jL6" firstAttribute="trailing" secondItem="aF8-PS-27C" secondAttribute="trailing" id="cAJ-9l-Wc4"/>
+                            <constraint firstItem="nHW-dw-AsI" firstAttribute="centerX" secondItem="d0C-md-Q2p" secondAttribute="centerX" id="maQ-0x-fIH"/>
+                            <constraint firstItem="nHW-dw-AsI" firstAttribute="centerY" secondItem="d0C-md-Q2p" secondAttribute="centerY" id="taO-bA-FJH"/>
+                            <constraint firstItem="QTq-5K-jL6" firstAttribute="bottom" secondItem="aF8-PS-27C" secondAttribute="bottom" id="uoI-oE-o54"/>
+                            <constraint firstItem="aF8-PS-27C" firstAttribute="top" secondItem="QTq-5K-jL6" secondAttribute="top" id="ze1-Bk-7Kt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QTq-5K-jL6"/>
+                    </view>
+                    <connections>
+                        <outlet property="alertTitleLabel" destination="YFd-gO-XYp" id="JFC-7n-SpW"/>
+                        <outlet property="contentView" destination="nHW-dw-AsI" id="erM-Wq-zzs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MnK-yI-LYQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="-108"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close" width="15" height="15"/>
+    </resources>
+</document>
