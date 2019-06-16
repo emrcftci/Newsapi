@@ -22,6 +22,7 @@ final class ResourceDetailController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     private let refreshControl = UIRefreshControl()
+    private var timer: Timer?
     
     var interactor: ResourceDetailBusinessLogic?
     var router: (ResourceDetailRoutingLogic & ResourceDetailDataPassing)?
@@ -70,8 +71,17 @@ private extension ResourceDetailController {
         interactor?.setPageTitle()
         setTableView()
         setRefreshControlAction()
+        setTimer()
     }
     
+    func setTimer() {
+        timer = Timer.scheduledTimer(timeInterval: Constants.TimerProperties.timerDuration, target: self, selector: #selector(didTimerExpired(_:)), userInfo: nil, repeats: true)
+    }
+    
+    @objc func didTimerExpired(_ sender: Any) {
+        fetchResourceDetail()
+    }
+
     func setTableView() {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100

@@ -24,4 +24,10 @@ enum Constants {
         static let ConnectionError = "Please check your connection."
     }
     
+    // MARK: - Timer Properties
+    
+    enum TimerProperties {
+        static let timerDuration = 60.0
+    }
+    
 }
