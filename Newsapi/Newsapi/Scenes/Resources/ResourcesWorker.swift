@@ -8,6 +8,24 @@
 
 import Foundation
 
-final class ResourcesWorker {
+final public class ResourcesWorker {
+    private let sessionProvider = URLSessionProvider()
+}
 
+// MARK: - Public Helpers
+
+public extension ResourcesWorker {
+    func getResources(completion: @escaping ResourcesHandler) {
+        sessionProvider.request(type: Resources.GetResources.RequestModel.self, service: NewsServices.getSources) { response in
+            
+            switch response {                
+            case let .success(sources):
+                completion(sources)
+                
+            case .failure(_):
+                completion(nil)
+            }
+            
+        }
+    }
 }

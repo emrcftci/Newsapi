@@ -8,20 +8,29 @@
 
 import Foundation
 
-enum Resources {
-
-    enum UseCase {
-
-      struct Request {
-
-      }
-
-      struct Response {
-      }
-
-      struct ViewModel {
-
-      }
-
+public enum Resources {
+    
+    public enum GetResources {
+        
+        struct Source: Codable {
+            let id: String
+            let name: String
+            let url: String
+            let description: String
+        }
+        
+        public struct RequestModel: Codable {
+            let status: String
+            let sources: [Source]
+        }
+        
+        struct Response {
+            
+        }
+        
+        struct ViewModel {
+            
+        }
+        
     }
 }
