@@ -96,6 +96,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 private extension AppDelegate {
     func setNavigationBar() {
         UINavigationBar.appearance().barTintColor = .blue
+        UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
     }
 }
