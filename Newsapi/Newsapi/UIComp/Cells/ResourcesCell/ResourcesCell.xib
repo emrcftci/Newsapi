@@ -18,34 +18,37 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="93.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PGL-EU-Eg5">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PGL-EU-Eg5">
                         <rect key="frame" x="16" y="10" width="374" height="72.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABC News" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUw-UJ-ILR">
-                                <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Y5o-Zt-3Ry"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.016804177310000001" green="0.62377463136338029" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIv-Xm-uV0">
-                                <rect key="frame" x="0.0" y="39" width="374" height="33.5"/>
+                                <rect key="frame" x="0.0" y="30" width="374" height="42.5"/>
                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="9"/>
                                 <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OCg-jx-UY7">
-                        <rect key="frame" x="0.0" y="92.5" width="414" height="1"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <rect key="frame" x="16" y="92.5" width="398" height="1"/>
+                        <color key="backgroundColor" white="0.80847454518779338" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="XgO-2I-Vxg"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="OCg-jx-UY7" firstAttribute="leading" secondItem="n52-8G-pPR" secondAttribute="leading" id="NhT-bD-SQL"/>
+                    <constraint firstItem="OCg-jx-UY7" firstAttribute="leading" secondItem="PGL-EU-Eg5" secondAttribute="leading" id="Mvm-38-Msi"/>
                     <constraint firstItem="PGL-EU-Eg5" firstAttribute="leading" secondItem="n52-8G-pPR" secondAttribute="leading" constant="16" id="TvA-eI-gXa"/>
                     <constraint firstAttribute="trailing" secondItem="PGL-EU-Eg5" secondAttribute="trailing" constant="24" id="WiA-70-N2e"/>
                     <constraint firstAttribute="bottom" secondItem="OCg-jx-UY7" secondAttribute="bottom" id="jYB-K9-C4p"/>

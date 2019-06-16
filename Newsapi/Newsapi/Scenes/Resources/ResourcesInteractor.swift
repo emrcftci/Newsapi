@@ -15,6 +15,7 @@ protocol ResourcesBusinessLogic: class {
 protocol ResourcesDataStore: class {
     var sources: [Resources.GetResources.Source]? { get set }
     var selectedResourceId: String? { get set }
+    var errorText: String? { get set }
 }
 
 class ResourcesInteractor: ResourcesBusinessLogic, ResourcesDataStore {
@@ -24,6 +25,7 @@ class ResourcesInteractor: ResourcesBusinessLogic, ResourcesDataStore {
     
     var sources: [Resources.GetResources.Source]?
     var selectedResourceId: String?
+    var errorText: String?
 
     func fetchResources(request: Resources.GetResources.RequestModel.Type) {
         
@@ -31,14 +33,22 @@ class ResourcesInteractor: ResourcesBusinessLogic, ResourcesDataStore {
             guard let self = self else { return }
             self.sources = response?.sources
             
-            guard let sources = self.sources else {
-                // TODO: Call presenter's failure message
-                return
-            }
-            
-            // TODO: Call presenter's reload action for tableView
-            
+            self.checkSourcesForAction()
+        }
+    }
+}
+
+// MARK: - Private Helpers
+
+private extension ResourcesInteractor {
+    func checkSourcesForAction() {
+        
+        if self.sources == nil {
+            self.errorText = "Please check your connection."
+            self.presenter?.presentFailureAlert()
+            return
         }
         
+        self.presenter?.presentReloadTableView()
     }
 }

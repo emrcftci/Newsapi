@@ -8,11 +8,20 @@
 
 import UIKit
 
-class ResourcesCell: UITableViewCell {
+public class ResourcesCell: UITableViewCell {
     
     // MARK: - Outlets
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+}
+
+// MARK: Public Helpers
+
+public extension ResourcesCell {
+    func customize(with model: Resources.GetResources.Source) {
+        titleLabel.text = model.name
+        descriptionLabel.text = model.description
+    }
 }
