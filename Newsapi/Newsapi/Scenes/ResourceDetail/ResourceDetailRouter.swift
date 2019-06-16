@@ -46,6 +46,10 @@ final class ResourceDetailRouter: ResourceDetailRoutingLogic, ResourceDetailData
 
 private extension ResourceDetailRouter {
     func openSafari(with url: URL) {
-        UIApplication.shared.open(url)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
 }
