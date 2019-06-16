@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        setNavigationBar()
         return true
     }
 
@@ -91,3 +91,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+// MARK: - Private NavigationBar Helpers
+
+private extension AppDelegate {
+    func setNavigationBar() {
+        UINavigationBar.appearance().barTintColor = .blue
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+    }
+}

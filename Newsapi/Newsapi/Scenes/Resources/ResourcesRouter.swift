@@ -10,6 +10,7 @@ import UIKit
 
 protocol ResourcesRoutingLogic: class {
     func routeToDetail()
+    func routeToFailureAlert()
 }
 
 protocol ResourcesDataPassing: class {
@@ -28,5 +29,19 @@ final class ResourcesRouter: ResourcesRoutingLogic, ResourcesDataPassing {
             vc.router?.dataStore?.resourceId = dataStore?.selectedResourceId
             viewController?.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func routeToFailureAlert() {
+        DispatchQueue.main.async(execute: { [weak self] in
+            guard let self = self else { return }
+            if let alert = UIStoryboard(name: "Alert", bundle: nil).instantiateViewController(withIdentifier: "FailureAlertController") as? FailureAlertController {
+                
+                alert.transitioningDelegate = alert
+                alert.modalPresentationStyle = .custom
+                
+                alert.titleText = self.dataStore?.errorText ?? "-"
+                self.viewController?.present(alert, animated: true, completion: nil)
+            }
+        })
     }
 }

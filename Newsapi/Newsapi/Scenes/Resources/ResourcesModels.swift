@@ -12,7 +12,7 @@ public enum Resources {
     
     public enum GetResources {
         
-        struct Source: Codable {
+        public struct Source: Codable {
             let id: String
             let name: String
             let url: String
@@ -25,12 +25,22 @@ public enum Resources {
         }
         
         struct Response {
-            
+            let sources: [Source]
         }
         
         struct ViewModel {
-            
+            let sources: [Source]
         }
         
+    }
+    
+    enum GetNumberOfRows {
+        struct Response {
+            let numberOfRowsInSection: Int
+        }
+        
+        struct ViewModel {
+            let numberOfRowsInSection: Int
+        }
     }
 }

@@ -9,11 +9,19 @@
 import Foundation
 
 protocol ResourcesPresentationLogic: class {
-
+    func presentReloadTableView()
+    func presentFailureAlert()
 }
 
 final class ResourcesPresenter: ResourcesPresentationLogic {
 
     weak var viewController: ResourcesDisplayLogic?
     
+    func presentReloadTableView() {
+        viewController?.displayReloadTableView()
+    }
+    
+    func presentFailureAlert() {
+        viewController?.displayFailureAlert()
+    }
 }

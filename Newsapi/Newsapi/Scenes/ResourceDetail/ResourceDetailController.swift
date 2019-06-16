@@ -12,7 +12,7 @@ protocol ResourceDetailDisplayLogic: class {
 
 }
 
-final class ResourceDetailController: BaseController {
+final class ResourceDetailController: UIViewController {
     
     // MARK: - Outlets
     
