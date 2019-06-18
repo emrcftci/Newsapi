@@ -1,5 +1,5 @@
 //
-//  NetworkError.swift
+//  HTTPMethod.swift
 //  Newsapi
 //
 //  Created by Emre Çiftçi on 15.06.2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum NetworkError {
-    case unknown
-    case noJSONData
+public enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
 }

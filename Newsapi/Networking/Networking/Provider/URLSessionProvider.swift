@@ -8,15 +8,15 @@
 
 import Foundation
 
-final class URLSessionProvider: ProviderProtocol {
+final public class URLSessionProvider: ProviderProtocol {
     
     private var session: URLSessionProtocol
     
-    init(session: URLSessionProtocol = URLSession.shared) {
+    public init(session: URLSessionProtocol = URLSession.shared) {
         self.session = session
     }
     
-    func request<T>(type: T.Type, service: ServiceProtocol, completion: @escaping (NetworkResponse<T>) -> Void) where T: Decodable {
+    public func request<T>(type: T.Type, service: ServiceProtocol, completion: @escaping (NetworkResponse<T>) -> Void) where T: Decodable {
         let request = URLRequest(service: service)
         NetworkLogger.log(request: request)
         let task = session.dataTask(request: request, completionHandler: { [weak self] data, response, error in
@@ -37,11 +37,17 @@ final class URLSessionProvider: ProviderProtocol {
         
         switch response.statusCode {
         case 200...299:
-            guard let data = data, let model = try? JSONDecoder().decode(T.self, from: data) else {
+            guard let data = data else {
                 return completion(.failure(.unknown))
             }
-            NetworkLogger.log(response: response, model: model, error: error)
-            completion(.success(model))
+            do {
+                 let model = try JSONDecoder().decode(T.self, from: data)
+                NetworkLogger.log(response: response, model: model, error: error)
+                completion(.success(model))
+            } catch let error {
+                print(error)
+                return completion(.failure(.noJSONData))
+            }
             
         default:
             NetworkLogger.log(response: response, error: error)

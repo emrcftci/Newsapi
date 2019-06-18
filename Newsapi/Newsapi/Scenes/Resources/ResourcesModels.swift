@@ -13,15 +13,15 @@ public enum Resources {
     public enum GetResources {
         
         public struct Source: Codable {
-            let id: String
-            let name: String
-            let url: String
-            let description: String
+            let id: String?
+            let name: String?
+            let url: String?
+            let description: String?
         }
         
         public struct RequestModel: Codable {
-            let status: String
-            let sources: [Source]
+            let status: String?
+            let sources: [Source]?
         }
         
         struct Response {

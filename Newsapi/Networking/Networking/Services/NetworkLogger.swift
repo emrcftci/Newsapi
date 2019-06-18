@@ -40,8 +40,7 @@ class NetworkLogger {
     static func log(response: HTTPURLResponse, model: Decodable? = nil, error: Error?) {
         print("\n - - - - - - - - - - RESPONSE - - - - - - - - - - \n")
         defer { print("\n - - - - - - - - - -  END - - - - - - - - - - \n") }
-        
-        
+           
         let statusCode = response.statusCode
         
         print("Status Code: \(statusCode)")

@@ -150,6 +150,7 @@ extension ResourcesController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let requestModel = Resources.SetSelectedId.Request(indexPath: indexPath)
         interactor?.setSelectedResourceData(request: requestModel)
     }

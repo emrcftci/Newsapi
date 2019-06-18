@@ -1,5 +1,5 @@
 //
-//  ParametersEncoding.swift
+//  NetworkError.swift
 //  Newsapi
 //
 //  Created by Emre Çiftçi on 15.06.2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ParametersEncoding {
-    case url
-    case json
+public enum NetworkError {
+    case unknown
+    case noJSONData
 }
