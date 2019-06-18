@@ -46,7 +46,7 @@ public extension ResourceDetailCell {
         
         newsImageView.image = UIImage(named: "detail_placeholder")
         
-        if let imageUrl = URL(string: model.urlToImage) {
+        if let imageUrl = URL(string: model.urlToImage ?? "") {
             downloaded(from: imageUrl)
         }
         
