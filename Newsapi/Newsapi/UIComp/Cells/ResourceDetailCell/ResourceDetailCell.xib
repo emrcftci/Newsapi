@@ -40,6 +40,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="191" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <state key="normal" title="Okuma listemden çıkar"/>
+                                        <connections>
+                                            <action selector="didTapReadingListButton:" destination="RDC-nn-Zhf" eventType="touchUpInside" id="Ggd-Oh-zPE"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:35:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwq-Hz-0E5">
                                         <rect key="frame" x="191" y="0.0" width="191" height="30"/>

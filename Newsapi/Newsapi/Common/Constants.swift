@@ -30,4 +30,11 @@ enum Constants {
         static let timerDuration = 60.0
     }
     
+    // MARK: - Button Titles
+    
+    enum ButtonTitles {
+        static let addReadlingListTitle = "Okuma listeme ekle"
+        static let removeReadlingListTitle = "Okuma listemden çıkar"
+    }
+    
 }

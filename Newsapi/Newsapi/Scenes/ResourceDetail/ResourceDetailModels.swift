@@ -18,12 +18,12 @@ public enum ResourceDetail {
             let articles: [Article]
         }
         
-        public struct Article: Codable {
+        public struct Article: Identifiable, Codable {
             let author: String
             let title: String
             let urlToImage: String
             let url: String
-            let publishedAt: String
+            var publishedAt: String?
         }
         
         struct ViewModel {
