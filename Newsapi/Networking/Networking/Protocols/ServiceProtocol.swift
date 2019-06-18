@@ -8,9 +8,9 @@
 
 import Foundation
 
-typealias Headers = [String: String]
+public typealias Headers = [String: String]
 
-protocol ServiceProtocol {
+public protocol ServiceProtocol {
     var baseURL: URL { get }
     var path: String { get }
     var method: HTTPMethod { get }

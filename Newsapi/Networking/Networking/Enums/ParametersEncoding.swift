@@ -1,5 +1,5 @@
 //
-//  NetworkResponse.swift
+//  ParametersEncoding.swift
 //  Newsapi
 //
 //  Created by Emre Çiftçi on 15.06.2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum NetworkResponse<T> {
-    case success(T)
-    case failure(NetworkError)
+public enum ParametersEncoding {
+    case url
+    case json
 }

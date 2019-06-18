@@ -18,10 +18,23 @@ public class ResourceDetailCell: UITableViewCell {
     @IBOutlet private weak var durationLabel: UILabel!
     
     private var dataTask: URLSessionDataTask?
+    private var currentModel: ResourceDetail.GetResourceDetail.Article?
     
     override public func prepareForReuse() {
         super.prepareForReuse()
         dataTask?.cancel()
+    }
+    
+    @IBAction func didTapReadingListButton(_ sender: UIButton) {
+        isObjectInReadingList() { [weak self] isSuccess in
+            guard let self = self else { return }
+            
+            if isSuccess {
+                self.deleteObjectToReadingList()
+            } else {
+                self.saveObjectToReadinglist()
+            }
+        }
     }
 }
 
@@ -29,16 +42,21 @@ public class ResourceDetailCell: UITableViewCell {
 
 public extension ResourceDetailCell {
     func customize(with model: ResourceDetail.GetResourceDetail.Article) {
+        currentModel = model
+        
         newsImageView.image = UIImage(named: "detail_placeholder")
         
-        if let imageUrl = URL(string: model.urlToImage) {
+        if let imageUrl = URL(string: model.urlToImage ?? "") {
             downloaded(from: imageUrl)
         }
         
         titleLabel.text = model.title
-        readingListButton.setTitle("-", for: .normal)
         
-        let publishTime = getFormattedDate(model.publishedAt)
+        isObjectInReadingList { [weak self] isSuccess in
+            self?.changeButtonTitle(isSuccess)
+        }
+        
+        let publishTime = getFormattedDate(model.publishedAt ?? "-")
         durationLabel.text = publishTime
     }
 }
@@ -65,5 +83,35 @@ private extension ResourceDetailCell {
     func getFormattedDate(_ date: String) -> String {
         let formattedDate = date.split(separator: "T").last?.description.dropLast().description
         return formattedDate ?? "-"
+    }
+    
+    func isObjectInReadingList(completion: @escaping BoolHandler) {
+        
+        if let currentModel = currentModel {
+            Cache.shared.checkObject(with: currentModel) { isSuccess in
+                completion(isSuccess)
+            }
+        }
+    }
+    
+    func changeButtonTitle(_ isObjectSaved: Bool) {
+        let buttonTitle = isObjectSaved ? Constants.ButtonTitles.removeReadlingListTitle :  Constants.ButtonTitles.addReadlingListTitle
+        readingListButton.setTitle(buttonTitle, for: .normal)
+    }
+    
+    func saveObjectToReadinglist() {
+        if let currentModel = currentModel {
+            Cache.shared.saveObject(with: currentModel) { [weak self] isSuccess in
+                self?.changeButtonTitle(isSuccess)
+            }
+        }
+    }
+    
+    func deleteObjectToReadingList() {
+        if let currentModel = currentModel {
+            Cache.shared.deleteObject(with: currentModel) { [weak self] in
+                self?.changeButtonTitle(false)
+            }
+        }
     }
 }

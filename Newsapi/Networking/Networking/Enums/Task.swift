@@ -8,9 +8,9 @@
 
 import Foundation
 
-typealias Parameters = [String: Any]
+public typealias Parameters = [String: Any]
 
-enum Task {
+public enum Task {
     case requestPlain
     case requestParameters(Parameters)
 }

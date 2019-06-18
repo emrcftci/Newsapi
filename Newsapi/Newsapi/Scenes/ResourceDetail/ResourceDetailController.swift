@@ -46,6 +46,11 @@ final class ResourceDetailController: UIViewController {
         setupView()
         fetchResourceDetail()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        disableTimer()
+    }
 
     // MARK: Setup
 
@@ -107,6 +112,11 @@ private extension ResourceDetailController {
     func fetchResourceDetail() {
         let requestModel = ResourceDetail.GetResourceDetail.RequestModel.self
         interactor?.fetchResourceDetail(request: requestModel)
+    }
+    
+    func disableTimer() {
+        timer?.invalidate()
+        timer = nil
     }
 }
 

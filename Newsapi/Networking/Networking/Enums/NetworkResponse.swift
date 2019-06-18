@@ -1,5 +1,5 @@
 //
-//  HTTPMethod.swift
+//  NetworkResponse.swift
 //  Newsapi
 //
 //  Created by Emre Çiftçi on 15.06.2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum HTTPMethod: String {
-    case get = "GET"
-    case post = "POST"
+public enum NetworkResponse<T> {
+    case success(T)
+    case failure(NetworkError)
 }
