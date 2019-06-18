@@ -42,19 +42,19 @@
 		298B426122B929160038D540 /* NetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		298B426622B929160038D540 /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
 		298B426822B929160038D540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		29E0C48922B988F800E3F76D /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Task.swift; path = ../../../Newsapi/Networking/Enums/Task.swift; sourceTree = "<group>"; };
-		29E0C48A22B988F800E3F76D /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkError.swift; path = ../../../Newsapi/Networking/Enums/NetworkError.swift; sourceTree = "<group>"; };
-		29E0C48B22B988F800E3F76D /* NetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkResponse.swift; path = ../../../Newsapi/Networking/Enums/NetworkResponse.swift; sourceTree = "<group>"; };
-		29E0C48C22B988F800E3F76D /* ParametersEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParametersEncoding.swift; path = ../../../Newsapi/Networking/Enums/ParametersEncoding.swift; sourceTree = "<group>"; };
-		29E0C48D22B988F800E3F76D /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = ../../../Newsapi/Networking/Enums/HTTPMethod.swift; sourceTree = "<group>"; };
-		29E0C49322B9892D00E3F76D /* URLComponentsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLComponentsExtension.swift; path = ../../../Newsapi/Networking/Extensions/URLComponentsExtension.swift; sourceTree = "<group>"; };
-		29E0C49422B9892D00E3F76D /* URLRequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLRequestExtension.swift; path = ../../../Newsapi/Networking/Extensions/URLRequestExtension.swift; sourceTree = "<group>"; };
-		29E0C49722B9893C00E3F76D /* ServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceProtocol.swift; path = ../../../Newsapi/Networking/Protocols/ServiceProtocol.swift; sourceTree = "<group>"; };
-		29E0C49822B9893C00E3F76D /* ProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProviderProtocol.swift; path = ../../../Newsapi/Networking/Protocols/ProviderProtocol.swift; sourceTree = "<group>"; };
-		29E0C49922B9893C00E3F76D /* URLSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLSessionProtocol.swift; path = ../../../Newsapi/Networking/Protocols/URLSessionProtocol.swift; sourceTree = "<group>"; };
-		29E0C49D22B9894600E3F76D /* URLSessionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLSessionProvider.swift; path = ../../../Newsapi/Networking/Provider/URLSessionProvider.swift; sourceTree = "<group>"; };
-		29E0C49F22B9895200E3F76D /* NewsServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsServices.swift; path = ../../../Newsapi/Networking/Services/NewsServices.swift; sourceTree = "<group>"; };
-		29E0C4A022B9895200E3F76D /* NetworkLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkLogger.swift; path = ../../../Newsapi/Networking/Services/NetworkLogger.swift; sourceTree = "<group>"; };
+		29E0C48922B988F800E3F76D /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		29E0C48A22B988F800E3F76D /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		29E0C48B22B988F800E3F76D /* NetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		29E0C48C22B988F800E3F76D /* ParametersEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametersEncoding.swift; sourceTree = "<group>"; };
+		29E0C48D22B988F800E3F76D /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		29E0C49322B9892D00E3F76D /* URLComponentsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLComponentsExtension.swift; sourceTree = "<group>"; };
+		29E0C49422B9892D00E3F76D /* URLRequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestExtension.swift; sourceTree = "<group>"; };
+		29E0C49722B9893C00E3F76D /* ServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
+		29E0C49822B9893C00E3F76D /* ProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderProtocol.swift; sourceTree = "<group>"; };
+		29E0C49922B9893C00E3F76D /* URLSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		29E0C49D22B9894600E3F76D /* URLSessionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProvider.swift; sourceTree = "<group>"; };
+		29E0C49F22B9895200E3F76D /* NewsServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsServices.swift; sourceTree = "<group>"; };
+		29E0C4A022B9895200E3F76D /* NetworkLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
