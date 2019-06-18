@@ -8,20 +8,20 @@
 
 import Foundation
 
-enum NewsServices: ServiceProtocol {
+public enum NewsServices: ServiceProtocol {
     
     case getSources
     case getTopHeadlines(source: String)
     
-    var baseURL: URL {
+    public var baseURL: URL {
         return URL(string: "https://newsapi.org/v2")!
     }
     
-    var apiKey: String {
+    public var apiKey: String {
         return "17dee2eb8eee461584226aceece35139"
     }
     
-    var path: String {
+    public var path: String {
         switch self {
             
         case .getSources:
@@ -33,11 +33,11 @@ enum NewsServices: ServiceProtocol {
         }
     }
     
-    var method: HTTPMethod {
+    public var method: HTTPMethod {
         return .get
     }
     
-    var task: Task {
+    public var task: Task {
         
         switch self {
             
@@ -52,11 +52,11 @@ enum NewsServices: ServiceProtocol {
         }
     }
     
-    var headers: Headers? {
+    public var headers: Headers? {
         return nil
     }
     
-    var parametersEncoding: ParametersEncoding {
+    public var parametersEncoding: ParametersEncoding {
         return .url
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Networking
 
 final public class ResourceDetailWorker {
     private let sessionProvider = URLSessionProvider()
@@ -22,7 +23,8 @@ public extension ResourceDetailWorker {
             case let .success(sourceDetail):
                 completion(sourceDetail)
                 
-            case .failure(_):
+            case .failure(let error):
+                print(error)
                 completion(nil)
             }
             
